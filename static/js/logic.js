@@ -5,8 +5,17 @@
 // earthquakes > 4.5 magnitude in the past 7 days
 var url = "/static/data/4.5_week.geojson";
 
+// var mag = data.properties.mag;
+// var depth = data.properties.coordinates[2];
+
 d3.json(url).then(function(data) {
-    console.log(data.features);
+
+    // finding magnitude values
+    console.log(data.features[100].properties[0]);
+
+    // finding depth values
+    console.log(data.features[100].geometry.coordinates[2]);
+
     L.geoJson(data).addTo(myMap);
   });
 
