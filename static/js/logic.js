@@ -66,6 +66,8 @@ d3.json(url).then(function(data) {
             let lon = dF[i].geometry.coordinates[1];
             let lonlat = [lon, lat];
 
+            console.log(dF[i].properties.url)
+
             // // Add circles to the map.
             L.circle(lonlat, {
               fillOpacity: 0.75,
@@ -74,7 +76,15 @@ d3.json(url).then(function(data) {
               // Adjust the radius.
               radius: (dF[i].properties.mag * dF[i].properties.mag * dF[i].properties.mag) * 3000,
               weight: 0
-            }).addTo(myMap);
+            })
+                .bindPopup(`
+                    <h2>${dF[i].properties.place}</h2><hr>
+                    <h3>Magnitude: ${dF[i].properties.mag}</h3>
+                    <h3>Depth: ${dF[i].geometry.coordinates[2]}</h3>
+                    <p><a href="${dF[i].properties.url}" target="_blank">Learn More</a></p>
+                `)
+                .addTo(myMap);
+
           }
     };
 
