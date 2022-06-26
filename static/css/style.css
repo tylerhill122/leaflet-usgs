@@ -8,3 +8,36 @@ body,
 html {
   height: 100%;
 }
+
+.leaflet-bar a {
+  background-color: #C7B3CC;
+}
+
+.leaflet-popup-content-wrapper {
+  background: rgb(238,174,202);
+  background: radial-gradient(circle, rgba(202, 174, 238, 1) 0%, rgba(148,187,233,0.8) 100%);
+}
+
+.leaflet-popup-content h2 {
+  color: #268AB2;
+}
+
+.logo p {
+  text-align: center;
+}
+
+#usgs {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height:50%;
+  width:50%;
+}
+
+.logo a {
+  opacity: 0.5;
+}
+
+.logo a:hover {
+  opacity: 1;
+}

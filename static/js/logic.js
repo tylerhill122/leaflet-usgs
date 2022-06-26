@@ -73,9 +73,11 @@ d3.json(url).then(function(data) {
             })
                 .bindPopup(`
                     <h2>${dF[i].properties.place}</h2><hr>
-                    <h3>Magnitude: ${dF[i].properties.mag}</h3>
-                    <h3>Depth: ${dF[i].geometry.coordinates[2]}</h3>
-                    <p><a href="${dF[i].properties.url}" target="_blank">Learn More</a></p>
+                    <h3>Magnitude:</h3> ${dF[i].properties.mag}
+                    <h3>Depth:</h3> ${dF[i].geometry.coordinates[2]}
+                    <div class="logo">
+                    <a href="${dF[i].properties.url}" target="_blank"><img src="static/images/usgs-logo.png" id="usgs"><p>Learn more</p></a>
+                    </div>
                 `)
                 .addTo(myMap);
 
