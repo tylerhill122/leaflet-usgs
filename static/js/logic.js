@@ -20,22 +20,46 @@ d3.json(url).then(function(data) {
         // let depth = dF[i].geometry.coordinates[2]
     
         for (var i = 0; i < dF.length; i++) {
-            
-            // console.log(dF[i]);
-
-            // Conditionals for EQ depth
+            // Conditionals for EQ depth to set color
             var color = "";
-            if (dF[i].geometry.coordinates[2] > 100) {
-              color = "red";
+            if (dF[i].geometry.coordinates[2] > 400) {
+              color = "#2a4858";
             }
-            else if (dF[i].geometry.coordinates[2] < 100 && dF[i].geometry.coordinates[2] > 75) {
-              color = "blue";
+            else if (dF[i].geometry.coordinates[2] < 400 && dF[i].geometry.coordinates[2] > 300) {
+              color = "#23596a";
             }
-            else if (dF[i].geometry.coordinates[2] < 75 && dF[i].geometry.coordinates[2] > 50) {
-              color = "green";
+            else if (dF[i].geometry.coordinates[2] < 300 && dF[i].geometry.coordinates[2] > 200) {
+              color = "#146b79";
+            }
+            else if (dF[i].geometry.coordinates[2] < 300 && dF[i].geometry.coordinates[2] > 200) {
+                color = "#007d85";
+            }
+            else if (dF[i].geometry.coordinates[2] < 200 && dF[i].geometry.coordinates[2] > 100) {
+                color = "#008f8c";
+            }
+            else if (dF[i].geometry.coordinates[2] < 100 && dF[i].geometry.coordinates[2] > 50) {
+                color = "#0ea18f";
+            }
+            else if (dF[i].geometry.coordinates[2] < 50 && dF[i].geometry.coordinates[2] > 30) {
+                color = "#35b28e";
+            }
+            else if (dF[i].geometry.coordinates[2] < 30 && dF[i].geometry.coordinates[2] > 20) {
+                color = "#58c389";
+            }
+            else if (dF[i].geometry.coordinates[2] < 20 && dF[i].geometry.coordinates[2] > 10) {
+                color = "#7dd382";
+            }
+            else if (dF[i].geometry.coordinates[2] < 10 && dF[i].geometry.coordinates[2] > 5) {
+                color = "#a4e27a";
+            }
+            else if (dF[i].geometry.coordinates[2] < 5 && dF[i].geometry.coordinates[2] > 2) {
+                color = "#cdef72";
+            }
+            else if (dF[i].geometry.coordinates[2] < 2 && dF[i].geometry.coordinates[2] > 0) {
+                color = "#fafa6e";
             }
             else {
-              color = "violet";
+              color = "#fafa6e";
             }
             
             let lat = dF[i].geometry.coordinates[0];
@@ -48,7 +72,8 @@ d3.json(url).then(function(data) {
               color: "white",
               fillColor: color,
               // Adjust the radius.
-              radius: Math.sqrt(dF[i].properties.mag) * 90000
+              radius: (dF[i].properties.mag * dF[i].properties.mag * dF[i].properties.mag) * 3000,
+              weight: 0
             }).addTo(myMap);
           }
     };
