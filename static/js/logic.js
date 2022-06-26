@@ -1,17 +1,11 @@
 // var url = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson";
-// var url = "/static/data/all_week.geojson";
+var url = "/static/data/all_week.geojson";
 // var url = "/static/data/significant_month.geojson";
 
 // earthquakes > 4.5 magnitude in the past 7 days
-var url = "/static/data/4.5_week.geojson";
+// var url = "/static/data/4.5_week.geojson";
 
 d3.json(url).then(function(data) {
-
-    // finding magnitude values
-    // console.log(data.features[100].properties[0]);
-
-    // // finding depth values
-    // console.log(data.features[100].geometry.coordinates[2]);
 
     // L.geoJson(data).addTo(myMap);
 
@@ -66,7 +60,7 @@ d3.json(url).then(function(data) {
             let lon = dF[i].geometry.coordinates[1];
             let lonlat = [lon, lat];
 
-            console.log(dF[i].properties.url)
+            // console.log(dF[i].properties.url)
 
             // // Add circles to the map.
             L.circle(lonlat, {
