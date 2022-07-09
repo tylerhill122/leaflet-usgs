@@ -1,5 +1,5 @@
-// var url = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson";
-var url = "/static/data/all_week.geojson";
+var url = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson";
+// var url = "/static/data/all_week.geojson";
 // var url = "/static/data/significant_month.geojson";
 
 // earthquakes > 4.5 magnitude in the past 7 days
